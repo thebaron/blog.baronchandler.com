@@ -1,4 +1,4 @@
-theme = "black-and-light"
+theme = "solar-theme-hugo"
 relativeURLs = true
 baseURL = "/"
 title = "Hugo Themes"
