@@ -25,12 +25,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Builds site
-      - name: Build site content
-        uses: srt32/hugo-action@v0.0.3
-        runs:
-            args: --minify -d deploy
-        
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.80.0'
+
+      - name: Build Site
+        run: hugo --minify -d deploy
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: |
