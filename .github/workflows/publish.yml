@@ -52,7 +52,7 @@ jobs:
           SHA=$(echo "${GITHUB_SHA}"|cut -c1-12)
           tar zcf - deployment.${SHA} | ssh github@sargasso.nyc3.venturecranial.com tar zxf -
           
-       - name: Activate deployment
+      - name: Activate deployment
         env: 
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock  
         run: |
