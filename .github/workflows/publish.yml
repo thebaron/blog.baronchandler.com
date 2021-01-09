@@ -57,4 +57,4 @@ jobs:
           SSH_AUTH_SOCK: /tmp/ssh_agent.sock  
         run: |
           SHA=$(echo "${GITHUB_SHA}"|cut -c1-12)
-          ssh github@sargasso.nyc3.venturecranial.com ${SHA}/script/deploy.sh 
+          ssh github@sargasso.nyc3.venturecranial.com deployment.${SHA}/script/deploy.sh 
