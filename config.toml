@@ -1,13 +1,16 @@
 theme = "hyde"
 relativeURLs = true
 baseURL = "/"
-title = "Hugo Themes"
-author = "Steve Francia"
-copyright = "Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved."
+title = "Baron Chandler"
+author = "Baron Chandler"
+copyright = "Copyright ©2021 Baron Chandler. All rights reserved."
 paginate = 3
 languageCode = "en"
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
+
+[params]
+  themeColor = "theme-base-0e"
 
 [menu]
 
