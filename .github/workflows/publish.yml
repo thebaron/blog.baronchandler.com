@@ -31,10 +31,22 @@ jobs:
           hugo-version: '0.80.0'
 
       - name: Build Site
-        run: hugo --minify -d deploy
-
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
         run: |
-          echo Hello, world!
-          ls -al deploy
+          SHA=$(echo "${GITHUB_SHA}|cut -c1-12)
+          hugo --minify -d deployment.${SHA}
+
+      - name: Setup SSH keys
+        env: 
+          SSH_AUTH_SOCK: /tmp/ssh_agent.sock  
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan sargasso.nyc3.venturecranial.com >> ~/.ssh/known_hosts
+          ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+          ssh-add - <<< "${{ secrets.SSH_PRIVATE_KEY }}"
+
+      - name: Push to server
+        run: |
+          SHA=$(echo "${GITHUB_SHA}|cut -c1-12)
+          tar zcf - deployment.${SHA} | ssh github@sargasso.nyc3.venturecranial.com tar zxf -
+          
+          
