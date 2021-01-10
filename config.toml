@@ -3,22 +3,20 @@ relativeURLs = true
 baseURL = "/"
 title = "Baron Chandler"
 author = "Baron Chandler"
-copyright = "Copyright ©2021 Baron Chandler. All rights reserved."
 paginate = 3
 languageCode = "en"
 DefaultContentLanguage = "en"
 enableInlineShortcodes = true
+enableEmoji = true
 
 [params]
-  themeColor = "theme-base-0e"
+  themeColor = "theme-base-77"
+  imageURL = "/hat.png"
+  titleURL = "/name.svg"
+  description = "A personal blog."
+  copyright = "Copyright ©2021 Baron Chandler. All Rights Reserved."
 
 [menu]
-
-  [[menu.main]]
-    identifier = "home"
-    name = "Home"
-    url = "/"
-    weight = 1
   [[menu.main]]
     identifier = "about"
     name = "About"

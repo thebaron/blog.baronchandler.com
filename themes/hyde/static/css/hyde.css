@@ -248,3 +248,20 @@ a.sidebar-nav-item:focus {
 .theme-base-0f .related-posts li a:hover {
   color: #8f5536;
 }
+
+/* Wonka */
+.theme-base-77 .sidebar {
+  background-color: #1b161d;
+}
+
+.theme-base-77 .content a,
+.theme-base-77 .related-posts li a:hover {
+  color: #1b161d;
+}
+
+
+.copyright { font-size: 0.8rem; }
+
+.emoji {
+  font-family: Apple Color Emoji, Segoe UI Emoji, NotoColorEmoji, Segoe UI Symbol, Android Emoji, EmojiSymbols;
+}
